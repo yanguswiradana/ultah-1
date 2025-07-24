@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Ulang Tahun Aurora!</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Menambahkan font kustom ke Tailwind */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f0f9ff; /* sky-50 */
+      }
+      .font-dancing {
+        font-family: "Dancing Script", cursive;
+      }
+      /* Style untuk radio button kustom */
+      .radio-label {
+        transition: all 0.2s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <section
+      id="hero"
+      class="min-h-screen flex flex-col items-center justify-center bg-sky-50 p-4 text-center relative"
+    >
+      <div class="z-10">
+        <h2 class="text-xl md:text-2xl text-sky-700">
+          You are invited to the birthday party of
+        </h2>
+        <h1 class="font-dancing text-6xl md:text-8xl text-sky-900 my-4">
+          Aurora
+        </h1>
+        <p class="text-lg md:text-xl text-sky-800 font-bold">
+          Sabtu, 23 Agustus 2025
+        </p>
+      </div>
+      <div class="absolute bottom-10 animate-bounce">
+        <a href="#countdown" aria-label="Scroll down">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8 text-sky-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section id="countdown" class="py-24 text-center bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-sky-800 mb-2">
+          Menghitung Mundur
+        </h2>
+        <p class="text-slate-600 mb-12">menuju hari spesial!</p>
+        <div
+          class="flex justify-center space-x-3 md:space-x-8 max-w-2xl mx-auto"
+        >
+          <div class="bg-sky-50 shadow-xl rounded-2xl p-4 md:p-6 flex-1">
+            <div id="days" class="text-4xl md:text-6xl font-bold text-sky-600">
+              00
+            </div>
+            <div class="text-sm text-sky-800 mt-1">Hari</div>
+          </div>
+          <div class="bg-sky-50 shadow-xl rounded-2xl p-4 md:p-6 flex-1">
+            <div id="hours" class="text-4xl md:text-6xl font-bold text-sky-600">
+              00
+            </div>
+            <div class="text-sm text-sky-800 mt-1">Jam</div>
+          </div>
+          <div class="bg-sky-50 shadow-xl rounded-2xl p-4 md:p-6 flex-1">
+            <div
+              id="minutes"
+              class="text-4xl md:text-6xl font-bold text-sky-600"
+            >
+              00
+            </div>
+            <div class="text-sm text-sky-800 mt-1">Menit</div>
+          </div>
+          <div class="bg-sky-50 shadow-xl rounded-2xl p-4 md:p-6 flex-1">
+            <div
+              id="seconds"
+              class="text-4xl md:text-6xl font-bold text-sky-600"
+            >
+              00
+            </div>
+            <div class="text-sm text-sky-800 mt-1">Detik</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp" class="py-24 bg-sky-50">
+      <div class="container mx-auto max-w-lg px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-sky-800 mb-8 text-center"
+        >
+          Konfirmasi Kehadiran
+        </h2>
+        <form id="rsvp-form" class="bg-white p-8 rounded-2xl shadow-2xl">
+          <div class="mb-6">
+            <label for="nama" class="block text-slate-700 font-bold mb-2"
+              >Nama Anda</label
+            >
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Tulis nama lengkap Anda..."
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 transition"
+              required
+            />
+          </div>
+
+          <div class="mb-8">
+            <fieldset>
+              <legend class="block text-slate-700 font-bold mb-3">
+                Konfirmasi Kehadiran
+              </legend>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <input
+                    type="radio"
+                    name="konfirmasi"
+                    value="Hadir"
+                    id="hadir"
+                    class="sr-only peer"
+                    required
+                  />
+                  <label
+                    for="hadir"
+                    class="radio-label block w-full text-center p-4 rounded-lg border-2 border-slate-300 cursor-pointer peer-checked:bg-sky-500 peer-checked:text-white peer-checked:border-sky-500 font-bold"
+                  >
+                    Hadir
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="konfirmasi"
+                    value="Tidak Hadir"
+                    id="tidak-hadir"
+                    class="sr-only peer"
+                  />
+                  <label
+                    for="tidak-hadir"
+                    class="radio-label block w-full text-center p-4 rounded-lg border-2 border-slate-300 cursor-pointer peer-checked:bg-rose-500 peer-checked:text-white peer-checked:border-rose-500 font-bold"
+                  >
+                    Tidak Hadir
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              id="submit-button"
+              class="w-full bg-sky-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-sky-700 transition duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Kirim Konfirmasi
+            </button>
+          </div>
+          <div id="form-message" class="mt-4 text-center font-bold"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-sky-800 mb-8 text-center"
+        >
+          Galeri Kenangan
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <img
+            src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            alt="Galeri 1"
+            class="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1504196606610-40e6718da8de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            alt="Galeri 2"
+            class="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            alt="Galeri 3"
+            class="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            alt="Galeri 4"
+            class="w-full h-full object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="map" class="py-24 bg-sky-50">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-sky-800 mb-8 text-center"
+        >
+          Lokasi Acara
+        </h2>
+        <div
+          class="w-full max-w-4xl mx-auto h-[450px] rounded-2xl shadow-2xl overflow-hidden border-4 border-white"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.471694242637!2d106.82458407474938!3d-6.201527393786214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f428a6311339%3A0x1d58c2b11545053!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1689694770289!5m2!1sid!2sid"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-sky-900 text-white py-8 text-center">
+      <p class="font-dancing text-2xl mb-2">Terima Kasih</p>
+      <p>Dibuat dengan ❤️ untuk Aurora.</p>
+    </footer>
+
+    <script>
+      // --- COUNTDOWN SCRIPT ---
+      const countdownDate = new Date("Aug 23, 2025 16:00:00").getTime();
+      const countdownFunction = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("days").innerText = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").innerText = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").innerText = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").innerText = seconds
+          .toString()
+          .padStart(2, "0");
+        if (distance < 0) {
+          clearInterval(countdownFunction);
+          document.getElementById("countdown").innerHTML =
+            "<h2 class='text-4xl font-bold text-sky-800 text-center'>Pesta telah dimulai!</h2>";
+        }
+      }, 1000);
+
+      // --- RSVP FORM SCRIPT ---
+      const rsvpForm = document.getElementById("rsvp-form");
+      const submitButton = document.getElementById("submit-button");
+      const formMessage = document.getElementById("form-message");
+      const scriptURL = "MASUKKAN_URL_SCRIPT_ANDA_DI_SINI";
+      rsvpForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        submitButton.disabled = true;
+        submitButton.innerHTML = "Mengirim...";
+        fetch(scriptURL, { method: "POST", body: new FormData(rsvpForm) })
+          .then((response) => {
+            if (response.ok) {
+              formMessage.className = "mt-4 text-center text-green-600";
+              formMessage.textContent =
+                "Terima kasih! Konfirmasi Anda telah kami terima.";
+              rsvpForm.reset();
+            } else {
+              throw new Error("Network response was not ok.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            formMessage.className = "mt-4 text-center text-red-600";
+            formMessage.textContent =
+              "Oops! Terjadi kesalahan. Silakan coba lagi.";
+          })
+          .finally(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML = "Kirim Konfirmasi";
+          });
+      });
+    </script>
+  </body>
+</html>
